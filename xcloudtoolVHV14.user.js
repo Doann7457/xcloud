@@ -1,6 +1,6 @@
 // ==UserScript==
-// @name                 Tool Dành cho Xbox Cloud
-// @name:zh-CN           Tool Dành cho Xbox Cloud
+// @name                 Tool Dành cho Xbox Cloud V1
+// @name:zh-CN           Tool Dành cho Xbox Cloud V1
 // @namespace            http://tampermonkey.net/xbox/nft
 // @version              2.2.0
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
