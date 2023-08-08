@@ -40,8 +40,8 @@
     //Tốc độ bit cao, lên tới 8M sau khi bị tắt, tốc độ bit chất lượng 720P
     let high_bitrate=1;
 
-    //TỰ BẬT Sử dụng bố cục tay cầm cổ điển trên màn hình cảm ứng (mặc định tắt)
-    let useDefaultTouchControls=0;
+    //TỰ BẬT Sử dụng bố cục tay cầm cổ điển trên màn hình cảm ứng (mặc định bật)
+    let useDefaultTouchControls=1;
 
     //Vô hiệu hóa phát hiện trạng thái mạng
     let disableCheckNetwork=1;
