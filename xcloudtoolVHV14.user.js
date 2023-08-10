@@ -50,7 +50,7 @@
     let no_pull_refresh=1;
 
     //Tự động toàn màn hình
-    let autoFullScreen=0;
+    let autoFullScreen=1;
 
     //Khóa máy chủ trò chơi trên đám mây, lưu ý rằng mục này không phải là khu vực trò chơi trên đám mây (đóng theo mặc định)
     let blockXcloudServer=0;
