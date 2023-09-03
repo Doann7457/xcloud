@@ -17,7 +17,7 @@
     'use strict';
     // Your code here...
 
-    let nftxboxversion = 'v3.2.5';
+    let nftxboxversion = 'v3';
 
     //========↓↓↓↓↓ là cài đặt ban đầu của từng chức năng, chỉ có hiệu lực khi chạy script lần đầu tiên↓↓↓↓↓=========//
     //★★ 1=bật 0=tắt ★★//
