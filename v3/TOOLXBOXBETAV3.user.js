@@ -1651,7 +1651,7 @@ user-select: none ;
         let docxf = document.head || document.documentElement;
         docxf.appendChild(xfbasicStyle);
         if (noPopSetting == 0) {
-            $('body').append(`<div id="popSetting" style="display:block">⚙️ cài đặt</div>`);
+            $('body').append(`<div id="popSetting" style="display:block">Hiện⚙️</div>`);
             $(document).on('click', '#popSetting', function () {
                 $('#settingsBackgroud').css('display', '');
             });
