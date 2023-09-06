@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name                 Tool Dành cho Xbox Cloud V3
-// @name:zh-CN           Tool Dành cho Xbox Cloud V3
+// @name                 Tool Dành cho Xbox Cloud V3.1
+// @name:zh-CN           Tool Dành cho Xbox Cloud V3.1
 // @namespace            http://tampermonkey.net/xbox/test 3nft
-// @version              3.2.5
+// @version              3.3
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
