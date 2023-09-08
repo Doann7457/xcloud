@@ -649,29 +649,7 @@
     return $wrapper;
 }
 
-function setupVideoSettingsBar() {
-    const CE = createElement;
-    let $stretchInp;
-    const refreshFunc = e => {
-        updateVideoPlayerCss();
-    };
-    const $stretch = naifeitian.toElement(video_stretch, refreshFunc);
-    const $wrapper = CE('div', { 'class': 'better-xcloud-quick-settings-bar' },
-                        CE('div', {},
-                           CE('label', { 'for': 'better-xcloud-quick-setting-stretch' }, 'Xoá đen viền'),
-                           $stretch),
-                        CE('div', {},
-                           CE('label', {}, 'Sắc nét hơn'),
-                           numberPicker(VIDEO_CLARITY, '', naifeitian.isSafari())),
-                        CE('div', {},
-                           CE('label', {}, 'bão hòa'),
-                           numberPicker(VIDEO_SATURATION, '%')),
-                        CE('div', {},
-                           CE('label', {}, 'CONTRAST'),
-                           numberPicker(VIDEO_CONTRAST, '%')),
-                        CE('div', {},
-                           CE('label', {}, 'độ sáng'),
-                           numberPicker(VIDEO_BRIGHTNESS, '%'))
+
                        );
 
 
