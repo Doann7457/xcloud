@@ -2,7 +2,7 @@
 // @name                 Tool Dành cho Xbox Cloud V3.1
 // @name:zh-CN           Tool Dành cho Xbox Cloud V3.1
 // @namespace            http://tampermonkey.net/xbox/test 3nft
-// @version              3.3
+// @version              3.4
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -25,7 +25,7 @@
     //Kết nối trực tiếp không cần proxy
     let no_need_VPN_play = 1;
 
-    let regionsList = { 'Korea': '168.126.63.1', 'US': '4.2.2.2', 'Japan': '210.131.113.123' }
+    let regionsList = { 'Korea': '3', 'US': '2', 'Japan': '1' }
 
     //欺骗IP
     let fakeIp = regionsList['Korea'];
