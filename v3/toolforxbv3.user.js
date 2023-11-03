@@ -28,7 +28,7 @@
     let regionsList = { 'Korea': '168.126.63.1', 'US': '4.2.2.2', 'Japan': '210.131.113.123' }
 
     //欺骗IP
-    let fakeIp = regionsList['Korea'];
+    let fakeIp = regionsList['US'];
 
     //Chọn ngôn ngữ
     let chooseLanguage = 0;
