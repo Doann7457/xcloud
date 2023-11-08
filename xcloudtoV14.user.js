@@ -30,7 +30,7 @@
                     }
 
     //giả mạo IP
-    let fakeIp=regionsList['Japan'];
+    let fakeIp=regionsList['US'];
 
     //Chọn ngôn ngữ
     let chooseLanguage=0;
