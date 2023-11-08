@@ -832,6 +832,8 @@
 
         dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Mua XboxCloud Tại FB：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">Đoàn Nguyễn</a></a><a </div>`
 
+	dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Mua XboxCloud Tại ZALO：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">0389940355</a></a><a </div>`
+
         dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Việt Hoá By：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">Đoàn</a><a style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>&：</lable><a style="margin-right:15px;outline: none;color: #ff4133;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg?locale=zh-CN">Youtube-XboxViệtNam</a></a><a </div>`
 
         dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Donate Tác giả：</lable><a style="margin-right:15px;outline: none;color: #00b038;text-decoration: underline;" href="https://raw.githubusercontent.com/Doann7457/7457/main/PNG/wechat.png">Wechat</a></a><a </div>`
