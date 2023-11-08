@@ -1143,6 +1143,7 @@ function initSettingBox() {
     dom += `<button class="closeSetting1 closeSetting2" style="outline: none;">Đóng</button>`
 
     dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Việt Hoá By：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">Đoàn Nguyễn</a></a><a </div>`
+    dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Mua XboxCloud Tại ZALO：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">0389940355</a></a><a </div>`
     dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Hỗ Trợ Việt Hoá : Kênh Youtube:</lable><a style="margin-right:15px;outline: none;color: #ff424c;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">XboxCloud Việt Nam</a></a><a </div>`
     dom+=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Donate Tác giả：</lable><a style="margin-right:15px;outline: none;color: #00b038;text-decoration: underline;" href="https://raw.githubusercontent.com/Doann7457/7457/main/PNG/wechat.png">Wechat</a></a><a </div>`
     dom = '<div style="padding: 20px;color: black;display:none;" class="settingsBackgroud" id=\'settingsBackgroud\'>' +`<div class="settingsBox">`+dom+`</div>`+ '</div>';
