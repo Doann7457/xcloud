@@ -45,7 +45,7 @@
     let disableCheckNetwork = 1;
 
     // Tự động toàn màn hình
-    let autoFullScreen = 0;
+    let autoFullScreen = 1;
 
     //Khóa server game trên cloud, lưu ý mục này không phải là khu vực game trên cloud (mặc định đóng)
     let blockXcloudServer = 0;
