@@ -1093,8 +1093,8 @@ function initSettingBox() {
     dom += `</label><hr style="background-color: black;width:95%" />`;
 
     dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Độ nét Và FPS：</div>`;
-    dom += `<input type="radio" class="high_bitrateListener settingsBoxInputRadio" style="outline:none;" name='highBitrate' id="high_bitrateOn" value="1" ${high_bitrate == 1 ? 'checked' : ''}><label for="high_bitrateOn" style="padding-right: 15px;">1080P 30FPS</label>`;
-    dom += `<input type="radio" class="high_bitrateListener settingsBoxInputRadio" style="outline:none;" name='highBitrate' id="high_bitrateOff" value="0" ${high_bitrate == 0 ? 'checked' : ''}><label for="high_bitrateOff" style="padding-right: 25px;">Auto 60FPS</label>`;
+    dom += `<input type="radio" class="high_bitrateListener settingsBoxInputRadio" style="outline:none;" name='highBitrate' id="high_bitrateOn" value="1" ${high_bitrate == 1 ? 'checked' : ''}><label for="high_bitrateOn" style="padding-right: 15px;">1080P 60FPS(Đẹp hơn)</label>`;
+    dom += `<input type="radio" class="high_bitrateListener settingsBoxInputRadio" style="outline:none;" name='highBitrate' id="high_bitrateOff" value="0" ${high_bitrate == 0 ? 'checked' : ''}><label for="high_bitrateOff" style="padding-right: 25px;">720P 60FPS(Mượt Hơn)</label>`;
     dom += `</label><hr style="background-color: black;width:95%" />`;
 
     dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Tắt cảnh báo mạng：</div>`;
