@@ -25,7 +25,7 @@
     //Kết nối trực tiếp không cần proxy
     let no_need_VPN_play = 1;
 
-    let regionsList = { 'Korea': '168.126.63.1', 'US': '4.2.2.2', 'Japan': '210.131.113.123' }
+    let regionsList = { 'Korea': '1', 'US': '1', 'Japan': '1' }
 
     //欺骗IP
     let fakeIp = regionsList['US'];
