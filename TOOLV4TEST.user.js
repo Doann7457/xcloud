@@ -10,7 +10,7 @@
 // @grant                unsafeWindow
 // @require              https://raw.githubusercontent.com/Doann7457/xcloud/main0/v3/jquery.min.js
 // @original-script      1
-// @description:zh-cn    Tiện ích bổ trợ Cho Xbox Cloud Gaming V3 . Việt hoá bởi Nguyễn Văn Đoàn. Video hướng dẫn và Cách sử dụng tại Kênh Youtube Xbox Cloud Việt Nam
+// @description:zh-cn    Tiện ích bổ trợ Cho Xbox Cloud Gaming. Việt hoá bởi Nguyễn Văn Đoàn. Video hướng dẫn và Cách sử dụng tại Kênh Youtube Xbox Cloud Việt Nam
 // @description          Tiện ích bổ trợ Cho Xbox Cloud Gaming V3 . Việt hoá bởi Nguyễn Văn Đoàn. Video hướng dẫn và Cách sử dụng tại Kênh Youtube Xbox Cloud Việt Nam
 // ==/UserScript==
 (function () {
@@ -54,11 +54,11 @@
 
     //Xóa viền đen của video
     let video_stretch = {
-        'default': 'tràn Toàn màn hình',
+        'default': 'Tràn Viền',
         'options': {
             'none': 'không',
-            'fill': 'tràn Toàn màn hình',
-            'setting': 'Tuỳ chỉnh',
+            'fill': 'Tràn Viền',
+            'setting': 'Chỉnh Kích Thước',
         },
         'name': 'video_stretchGM'
     }
@@ -1060,7 +1060,7 @@ function initSettingBox() {
     dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Tool Xbox Cloud Việt Nam V4.0</lable> `;
     dom += `</label><hr style="background-color: black;width:95%" />`;
 
-    dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Mở Tool：</div>`;
+    dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Mở Tool ：</div>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOpen" value="1" ${no_need_VPN_play == 1 ? 'checked' : ''}><label for="noNeedVpnOpen" style="padding-right: 15px;">Mở</label>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOff" value="0" ${no_need_VPN_play == 0 ? 'checked' : ''}><label for="noNeedVpnOff" style="padding-right: 15px;">Tắt</label>`;
     dom += `</label><hr style="background-color: black;width:95%" />`;
@@ -1090,15 +1090,20 @@ function initSettingBox() {
     dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Treo Game：</div>`;
     dom += `<input type="radio" class="antiKickListener settingsBoxInputRadio" style="outline:none;" name='antiKick' id="antiKickOn" value="1" ${antiKick == 1 ? 'checked' : ''}><label for="antiKickOn" style="padding-right: 15px;">Mở</label>`;
     dom += `<input type="radio" class="antiKickListener settingsBoxInputRadio" style="outline:none;" name='antiKick' id="antiKickOff" value="0" ${antiKick == 0 ? 'checked' : ''}><label for="antiKickOff" style="padding-right: 25px;">Tắt</label>`;
+    dom += `</label><hr style="background-color: black;width:100%" />`;
+    dom += `</label><hr style="background-color: black;width:100%" />`;
+    dom += `</label><hr style="background-color: black;width:100%" />`;
 
+
+
+    dom += `</label><hr style="background-color: black;width:100%" />`;
+    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Việt Hoá By Đoàn Nguyễn</lable> `;
     dom += `</label><hr style="background-color: black;width:95%" />`;
-    dom +=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Việt Hoá By：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">Đoàn Nguyễn</a></a><a </div>`;
+    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Mua Gói Xbox Liên Hệ Zalo 0389940355</lable> `;
     dom += `</label><hr style="background-color: black;width:95%" />`;
-    dom +=`<div style="text-align: left;margin-top: 8px;font-size: 16px;"><lable>Mua XboxCloud Tại ZALO：</lable><a style="margin-right:15px;outline: none;color: #2f82f7;text-decoration: underline;" href="https://www.facebook.com/Doan7457">0389940355</a></a><a </div>`;
+    dom +=`<div style="text-align: center;margin-top: 8px;color: #01060d;font-size: 16px;"><lable>Kênh Youtube : </lable><a style="margin-right:15px;outline: none;color: #ff424c;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">XboxCloud Việt Nam</a></a><a </label>`;
     dom += `</label><hr style="background-color: black;width:95%" />`;
-    dom +=`<div style="text-align: left;margin-top: 8px;color: #01060d;font-size: 16px;"><lable>Kênh Youtube:</lable><a style="margin-right:15px;outline: none;color: #ff424c;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">XboxCloud Việt Nam</a></a><a </div>`;
-    dom += `</label><hr style="background-color: black;width:95%" />`;
-    dom +=`<div style="text-align: left;margin-top: 8px;color: font-size: 16px;#01060d;"><lable>Donate Tác giả：</lable><a style="margin-right:15px;outline: none;color: #000502;text-decoration: underline;" href="https://raw.githubusercontent.com/Doann7457/7457/main/PNG/wechat.png">Wechat</a></a><a </div>`;
+    dom +=`<div style="text-align: center;margin-top: 8px;color:black font-size: 16px;"><lable>Donate Tác giả：</lable><a style="margin-right:15px;outline: none;color: ;text-decoration: underline;" href="https://raw.githubusercontent.com/Doann7457/7457/main/PNG/wechat.png">Wechat</a></a><a </label>`;
     dom += `</label><hr style="background-color: black;width:95%" />`;
     dom = '<div style="padding: 20px;color: black;display:none;" class="settingsBackgroud" id=\'settingsBackgroud\'>' +`<div class="settingsBox">`+dom+`</div>`+ '</div>';
     dom += `<button class="closeSetting1 closeSetting2" style="outline: none;">Đóng</button>`
