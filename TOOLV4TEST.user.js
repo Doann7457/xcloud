@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name                 Tool Dành cho Xbox Cloud V4.0 TEST
-// @name:zh-CN           Tool Dành cho Xbox Cloud V3.4
+// @name:zh-CN           Tool Dành cho Xbox Cloud V4.0
 // @namespace            http://tampermonkey.net/xbox/test 3nft
-// @version              3.4
+// @version              4.0
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -1107,7 +1107,6 @@ function initSettingBox() {
     dom += `</label><hr style="background-color: black;width:95%" />`;
     dom = '<div style="padding: 20px;color: black;display:none;" class="settingsBackgroud" id=\'settingsBackgroud\'>' +`<div class="settingsBox">`+dom+`</div>`+ '</div>';
     dom += `<button class="closeSetting1 closeSetting2" style="outline: none;">Đóng</button>`
-    dom += `</label><hr style="background-color: black;width:95%" />`;
 
     $('body').append(dom);
 
