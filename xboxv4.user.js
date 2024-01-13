@@ -471,12 +471,10 @@
 
         const CE = createElement;
         StreamStats.#$container = CE('div', {'class': 'better-xcloud-stats-bar better-xcloud-gone'},
-                                     CE('label', {}, 'FPS'),
-                                     StreamStats.#$fps = CE('span', {}, 0),
-                                     CE('label', {}, 'PING'),
-                                     StreamStats.#$dt = CE('span', {}, '0ms'),
-                                     CE('label', {}, 'WIFI'),
-                                     StreamStats.#$br = CE('span', {}, '0 Mbps'));
+                                 CE('label', {}, 'FPS'),
+                                 StreamStats.#$fps = CE('span', {}, 0),
+                                 CE('label', {}, 'PING'),
+                                 StreamStats.#$rtt = CE('span', {}, '0ms'));
 
         let clickTimeout;
         StreamStats.#$container.addEventListener('mousedown', e => {
@@ -1518,7 +1516,7 @@ $(document).ready(function () {
         if(logoText.attr('href')!=null && logoText.attr('href')!=""){
             logoText.removeAttr('href');
             logoText.css("color",'white');
-            logoText.text("⚙️ 设置");
+            logoText.text("⚙️Hiện");
         }
         initSettingBox();
         StreamStats.render();
