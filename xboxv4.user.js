@@ -1099,10 +1099,10 @@ function initSettingBox() {
     let dom = '';
     dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Tool Xbox Cloud Việt Nam V4.0</lable> `;
     dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Mua Gói Xbox Liên Hệ Zalo 0389940355</lable> `;
-    dom += `</label><hr style="background-color: #007d06;width:95%" />`;
-        dom += `</label><hr style="background-color: black;width:95%" />`;
-        dom += `</label><hr style="background-color: black;width:95%" />`;
-        dom += `</label><hr style="background-color: black;width:95%" />`;
+    dom += `</label><hr style="background-color: #007d06;width:100%" />`;
+        dom += `</label><hr style="background-color: black;width:100%" />`;
+        dom += `</label><hr style="background-color: black;width:100%" />`;
+        dom += `</label><hr style="background-color: black;width:100%" />`;
     dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Mở Tool：</div>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOpen" value="1" ${no_need_VPN_play == 1 ? 'checked' : ''}><label for="noNeedVpnOpen" style="padding-right: 15px;">Mở</label>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOff" value="0" ${no_need_VPN_play == 0 ? 'checked' : ''}><label for="noNeedVpnOff" style="padding-right: 15px;">Tắt</label>`;
