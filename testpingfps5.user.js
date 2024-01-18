@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name                 Xbox TOOL By Xbox Cloud Viet Nam v5.0
-// @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v5.0
+// @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.1
+// @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.1
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              5.0
+// @version              4.1
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -17,7 +17,7 @@
     'use strict';
     // Your code here...
 
-    let nftxboxversion = 'v3';
+    let nftxboxversion = 'v4.1';
 
     //========↓↓↓↓↓ là cài đặt ban đầu của từng chức năng, chỉ có hiệu lực khi chạy script lần đầu tiên↓↓↓↓↓=========//
     //★★ 1=bật 0=tắt ★★//
@@ -36,7 +36,7 @@
     let IfErrUsedefaultGameLanguage = 'zh-CN';
 
     ///Tốc độ bit cao, lên tới 8M sau khi bị tắt, tốc độ bit chất lượng 720P
-    let high_bitrate = 0;
+    let high_bitrate = 1;
 
     // buộc chạm
     let autoOpenOC = 1;
@@ -48,16 +48,16 @@
     let autoFullScreen = 1;
 
     //Khóa server game trên cloud, lưu ý mục này không phải là khu vực game trên cloud (mặc định đóng)
-    let blockXcloudServer = 0;
+    let blockXcloudServer = 1;
     let blockXcloudServerList = ['AustraliaEast', 'AustraliaSouthEast', 'BrazilSouth', 'EastUS', 'EastUS2', 'JapanEast', 'KoreaCentral', 'NorthCentralUs', 'SouthCentralUS', 'UKSouth', 'WestEurope', 'WestUS', 'WestUS2'];
-    let defaultXcloudServer = 'KoreaCentral';
+    let defaultXcloudServer = 'JapanEast';
 
     //Xóa viền đen của video
     let video_stretch = {
-        'default': 'tràn Toàn màn hình',
+        'default': 'Tranvien',
         'options': {
             'none': 'không',
-            'fill': 'tràn Toàn màn hình',
+            'fill': 'Tranvien',
             'setting': 'Tuỳ chỉnh',
         },
         'name': 'video_stretchGM'
@@ -76,7 +76,7 @@
     let canShowOC = false;
     let autoShowTouch = true;
 
-    let STATS_SHOW_WHEN_PLAYING = { "default": true, "name": "STATS_SHOW_WHEN_PLAYINGGM" };
+    let STATS_SHOW_WHEN_PLAYING = { "default": true, "hiện thông số khi bắt đầu game": "STATS_SHOW_WHEN_PLAYINGGM" };
 
     let STATS_POSITION = { 'default': 'top-left', 'options': { 'top-left': 'trái', 'top-center': 'giữa', 'top-right': 'phải' }, 'name': 'STATS_POSITIONGM' }
 
@@ -91,14 +91,14 @@
     let STATS_TEXT_SIZE = {
         'default': '0.9rem',
         'options': {
-            '0.9rem': 'Bé nhỏ',
-            '1.0rem': 'ở giữa',
-            '1.1rem': 'to lớn',
+            '0.6rem': 'nhỏ',
+            '1.0rem': 'vừa',
+            '1.9rem': 'to',
         },
         'name': 'STATS_TEXT_SIZEGM'
     }
 
-    let STATS_CONDITIONAL_FORMATTING = { "default": true, "số màu": "STATS_CONDITIONAL_FORMATTINGGM" };
+    let STATS_CONDITIONAL_FORMATTING = { "default": true, "số có màu": "STATS_CONDITIONAL_FORMATTINGGM" };
 
     let VIDEO_CLARITY = {
         'default': 2,
@@ -128,7 +128,7 @@
     }
 
     // Treo lên để khỏi bị đá
-    let antiKick = 0;
+    let antiKick = 1;
 
     //========↑↑↑↑↑ là cài đặt ban đầu của từng chức năng, chỉ có script chạy lần đầu là hợp lệ ↑↑↑↑↑=========//
 
@@ -654,16 +654,10 @@ function setupVideoSettingsBar() {
                            CE('label', { 'for': 'better-xcloud-quick-setting-stretch' }, 'Xoá đen viền'),
                            $stretch),
                         CE('div', {},
-                           CE('label', {}, 'Sắc nét hơn'),
+                           CE('label', {}, 'SẮC NÉT'),
                            numberPicker(VIDEO_CLARITY, '', naifeitian.isSafari())),
                         CE('div', {},
-                           CE('label', {}, 'bão hòa'),
-                           numberPicker(VIDEO_SATURATION, '%')),
-                        CE('div', {},
-                           CE('label', {}, 'CONTRAST'),
-                           numberPicker(VIDEO_CONTRAST, '%')),
-                        CE('div', {},
-                           CE('label', {}, 'độ sáng'),
+                           CE('label', {}, 'ĐỘ SÁNG'),
                            numberPicker(VIDEO_BRIGHTNESS, '%'))
                        );
 
@@ -683,10 +677,10 @@ function setupVideoSettingsBar() {
     if ($stretch.id == 'xcloud_setting_video_stretchGM') {
         let dom = $('#xcloud_setting_video_stretchGM');
         dom.after(`<div id="video_stretch_x_y" style="display: ${video_stretch.default == 'setting' ? 'block' : 'none'}">
-                     <lable>左右
+                     <lable>Dọc
                        <input type=\'text\'class="video_stretch_x_y_Listener" id="video_stretch_x" style="width:35px" value="${video_stretch_x_y['x']}"/>
                      </lable><br/>
-                     <lable>上下
+                     <lable>Ngang
                        <input type=\'text\'class="video_stretch_x_y_Listener" id="video_stretch_y" style="width:35px" value="${video_stretch_x_y['y']}"/>
                      </lable>
                   </div>`);
@@ -1790,7 +1784,7 @@ function injectVideoSettingsButton() {
                 }
 
                 // Create Video Settings button
-                const $btnVideoSettings = cloneStreamMenuButton($orgButton, 'Cài Đặt Tràn Viền', ICON_VIDEO_SETTINGS);
+                const $btnVideoSettings = cloneStreamMenuButton($orgButton, 'Video Tràn Viền', ICON_VIDEO_SETTINGS);
                 $btnVideoSettings.addEventListener('click', e => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -1817,7 +1811,7 @@ function injectVideoSettingsButton() {
                 });
 
                 // Create Stream Stats button
-                const $btnStreamStats = cloneStreamMenuButton($orgButton, 'Hiển Thị PING FPS', ICON_STREAM_STATS);
+                const $btnStreamStats = cloneStreamMenuButton($orgButton, 'BẬT/TẮT HIỆN PING FPS', ICON_STREAM_STATS);
                 $btnStreamStats.addEventListener('click', e => {
                     e.preventDefault();
                     e.stopPropagation();
