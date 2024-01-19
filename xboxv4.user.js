@@ -89,7 +89,7 @@
     };
 
     let STATS_TEXT_SIZE = {
-        'default': '0.9rem',
+        'default': '1.0rem',
         'options': {
             '0.6rem': 'nhỏ',
             '1.0rem': 'vừa',
