@@ -56,8 +56,8 @@
     let video_stretch = {
         'default': 'fill',
         'options': {
-            'none': 'không',
-            'fill': 'Tranvien',
+            'none': 'Mặc Định',
+            'fill': 'Tràn Viền',
             'setting': 'Tuỳ chỉnh',
         },
         'name': 'video_stretchGM'
