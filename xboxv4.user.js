@@ -2,7 +2,7 @@
 // @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              4.0
+// @version              4.1
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
