@@ -1076,7 +1076,12 @@ function initSettingBox() {
     });
     dom += `</select>`;
     dom += `</label><hr style="background-color: black;width:95%" />`;
-
+    
+    dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Treo Game：</div>`;
+    dom += `<input type="radio" class="antiKickListener settingsBoxInputRadio" style="outline:none;" name='antiKick' id="antiKickOn" value="1" ${antiKick == 1 ? 'checked' : ''}><label for="antiKickOn" style="padding-right: 15px;">Mở</label>`;
+    dom += `<input type="radio" class="antiKickListener settingsBoxInputRadio" style="outline:none;" name='antiKick' id="antiKickOff" value="0" ${antiKick == 0 ? 'checked' : ''}><label for="antiKickOff" style="padding-right: 25px;">Tắt</label>`;
+    dom += `</label><hr style="background-color: black;width:95%" />`;
+    
     dom += `<button class="closeSetting1 closeSetting2" style="outline: none;">Đóng</button>`
 
     dom += `</label><hr style="background-color: black;width:100%" />`;
