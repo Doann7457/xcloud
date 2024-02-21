@@ -2,7 +2,7 @@
 // @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              4.1
+// @version              4.2
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -25,7 +25,7 @@
     //Kết nối trực tiếp không cần proxy
     let no_need_VPN_play = 1;
 
-    let regionsList = { 'Korea': '168.126.63.1', 'US': '4.2.2.2', 'Japan': '210.131.113.123' }
+    let regionsList = { 'Korea': '1', 'US': '2', 'Japan': '3' }
 
     //欺骗IP
     let fakeIp = regionsList['US'];
@@ -1042,8 +1042,8 @@ function initSettingBox() {
 
     let dom = '';
 
-    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Tool Xbox Cloud Việt Nam V4.0</lable> `;
-    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Mua Gói Xbox Liên Hệ Zalo 0389940355</lable> `;
+    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Tool Xbox Cloud Việt Nam V4.0(OFF)</lable> `;
+    dom += `<label  style="display: block;text-align:center;"><div   style="display: inline;">Liên Hệ Zalo 0389940355</lable> `;
     dom += `</label><hr style="background-color: #007d06;width:95%" />`;
         dom += `</label><hr style="background-color: black;width:95%" />`;
         dom += `</label><hr style="background-color: black;width:95%" />`;
