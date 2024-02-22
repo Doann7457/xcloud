@@ -2,7 +2,7 @@
 // @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              4.2
+// @version              4.3
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -25,7 +25,7 @@
     //Kết nối trực tiếp không cần proxy
     let no_need_VPN_play = 1;
 
-    let regionsList = { 'Korea': '1', 'US': '2', 'Japan': '3' }
+    let regionsList = { 'Korea': '1', 'US': '1', 'Japan': '1' }
 
     //欺骗IP
     let fakeIp = regionsList['US'];
