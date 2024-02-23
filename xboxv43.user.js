@@ -48,7 +48,7 @@
     let autoFullScreen = 1;
 
     //Khóa server game trên cloud, lưu ý mục này không phải là khu vực game trên cloud (mặc định đóng)
-    let blockXcloudServer = 1;
+    let blockXcloudServer = 0;
     let blockXcloudServerList = ['AustraliaEast', 'AustraliaSouthEast', 'BrazilSouth', 'EastUS', 'EastUS2', 'JapanEast', 'KoreaCentral', 'NorthCentralUs', 'SouthCentralUS', 'UKSouth', 'WestEurope', 'WestUS', 'WestUS2'];
     let defaultXcloudServer = 'KoreaCentral';
 
