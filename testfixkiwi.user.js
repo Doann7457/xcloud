@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0 test 1
+// @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              4.3
+// @version              4.4
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -25,7 +25,7 @@
     //Kết nối trực tiếp không cần proxy
     let no_need_VPN_play = 1;
 
-    let regionsList = { 'Korea': '1', 'US': '1', 'Japan': '1' }
+    let regionsList = { 'Korea': '168.126.63.1', 'US': '4.2.2.2', 'Japan': '210.131.113.123' }
 
     //欺骗IP
     let fakeIp = regionsList['US'];
@@ -741,8 +741,8 @@ let fakeuad = {
 };
 
 try {
-    HookProperty(windowCtx.navigator, "userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/999.0.0.0");
-    HookProperty(windowCtx.navigator, "appVersion", "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 Edg/999.0.0.0");
+    HookProperty(windowCtx.navigator, "userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/999.0.0.0");
+    HookProperty(windowCtx.navigator, "appVersion", "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/999.0.0.0");
     HookProperty(windowCtx.navigator, "platform", "Win32");
     HookProperty(windowCtx.navigator, "appName", "Netscape");
     HookProperty(windowCtx.navigator, "appCodeName", "Mozilla");
