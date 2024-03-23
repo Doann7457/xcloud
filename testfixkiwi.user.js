@@ -330,6 +330,73 @@
         } catch (e) {
         }
     }
+    class UserAgent {
+    static get PROFILE_EDGE_WINDOWS() { return 'edge-windows'; }
+    static get PROFILE_SAFARI_MACOS() { return 'safari-macos'; }
+    static get PROFILE_SMARTTV_TIZEN() { return 'smarttv-tizen'; }
+    static get PROFILE_DEFAULT() { return 'default'; }
+    static get PROFILE_CUSTOM() { return 'custom'; }
+
+    static #USER_AGENTS = {
+        [UserAgent.PROFILE_EDGE_WINDOWS]: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188',
+        [UserAgent.PROFILE_SAFARI_MACOS]: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.1',
+        [UserAgent.PROFILE_SMARTTV_TIZEN]: 'Mozilla/5.0 (SMART-TV; LINUX; Tizen 7.0) AppleWebKit/537.36 (KHTML, like Gecko) 94.0.4606.31/7.0 TV Safari/537.36',
+    }
+
+    static getDefault() {
+        return window.navigator.orgUserAgent || window.navigator.userAgent;
+    }
+
+    static get(profile) {
+        const defaultUserAgent = UserAgent.getDefault();
+        if (profile === UserAgent.PROFILE_CUSTOM) {
+            return getPref(Preferences.USER_AGENT_CUSTOM, '');
+        }
+
+        return UserAgent.#USER_AGENTS[profile] || defaultUserAgent;
+    }
+
+    static isSafari(mobile=false) {
+        const userAgent = (UserAgent.getDefault() || '').toLowerCase();
+        let result = userAgent.includes('safari') && !userAgent.includes('chrom');
+
+        if (result && mobile) {
+            result = userAgent.includes('mobile');
+        }
+
+        return result;
+    }
+
+    static spoof() {
+        let newUserAgent;
+
+        const profile = getPref(Preferences.USER_AGENT_PROFILE);
+        if (profile === UserAgent.PROFILE_DEFAULT) {
+            // Fix Kiwi 124
+            if (window.navigator.userAgent.includes('Chrome/124.0.0.0')) {
+                newUserAgent = window.navigator.userAgent.replace('Chrome/124.0.0.0', 'Chrome/122.0.0.0')
+            } else {
+                return;
+            }
+
+        }
+
+        if (!newUserAgent) {
+            newUserAgent = UserAgent.get(profile) || defaultUserAgent;
+        }
+
+        // Clear data of navigator.userAgentData, force xCloud to detect browser based on navigator.userAgent
+        Object.defineProperty(window.navigator, 'userAgentData', {});
+
+        // Override navigator.userAgent
+        window.navigator.orgUserAgent = window.navigator.userAgent;
+        Object.defineProperty(window.navigator, 'userAgent', {
+            value: newUserAgent,
+        });
+
+        return newUserAgent;
+    }
+}
 
     blockXcloudServerList = naifeitian.getGM(blockXcloudServerList, 'blockXcloudServerListGM');
     no_need_VPN_play = naifeitian.getGM(no_need_VPN_play, 'no_need_VPN_playGM');
