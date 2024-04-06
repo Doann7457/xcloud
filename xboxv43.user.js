@@ -54,7 +54,7 @@
 
     //Xóa viền đen của video
     let video_stretch = {
-        'default': 'fill',
+        'default': 'none',
         'options': {
             'none': 'Mặc Định',
             'fill': 'Tràn Viền',
@@ -101,7 +101,7 @@
     let STATS_CONDITIONAL_FORMATTING = { "default": true, "số có màu": "STATS_CONDITIONAL_FORMATTINGGM" };
 
     let VIDEO_CLARITY = {
-        'default': 2,
+        'default': 0,
         'min': 0,
         'max': 3,
         'name': 'VIDEO_CLARITYGM'
