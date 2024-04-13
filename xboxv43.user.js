@@ -2,7 +2,7 @@
 // @name                 Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @name:zh-CN           Xbox TOOL By Xbox Cloud Viet Nam v4.0
 // @namespace            http://tampermonkey.net/xbox/nft
-// @version              4.3
+// @version              4.4
 // @author               (Nephalem) Việt hoá by Kênh Youtube Xbox Cloud Việt Nam
 // @license              MIT
 // @match                https://www.xbox.com/*/play*
@@ -48,13 +48,13 @@
     let autoFullScreen = 1;
 
     //Khóa server game trên cloud, lưu ý mục này không phải là khu vực game trên cloud (mặc định đóng)
-    let blockXcloudServer = 0;
+    let blockXcloudServer = 1;
     let blockXcloudServerList = ['AustraliaEast', 'AustraliaSouthEast', 'BrazilSouth', 'EastUS', 'EastUS2', 'JapanEast', 'KoreaCentral', 'NorthCentralUs', 'SouthCentralUS', 'UKSouth', 'WestEurope', 'WestUS', 'WestUS2'];
     let defaultXcloudServer = 'KoreaCentral';
 
     //Xóa viền đen của video
     let video_stretch = {
-        'default': 'none',
+        'default': 'fill',
         'options': {
             'none': 'Mặc Định',
             'fill': 'Tràn Viền',
@@ -101,7 +101,7 @@
     let STATS_CONDITIONAL_FORMATTING = { "default": true, "số có màu": "STATS_CONDITIONAL_FORMATTINGGM" };
 
     let VIDEO_CLARITY = {
-        'default': 0,
+        'default': 2,
         'min': 0,
         'max': 3,
         'name': 'VIDEO_CLARITYGM'
@@ -330,6 +330,73 @@
         } catch (e) {
         }
     }
+    class UserAgent {
+    static get PROFILE_EDGE_WINDOWS() { return 'edge-windows'; }
+    static get PROFILE_SAFARI_MACOS() { return 'safari-macos'; }
+    static get PROFILE_SMARTTV_TIZEN() { return 'smarttv-tizen'; }
+    static get PROFILE_DEFAULT() { return 'default'; }
+    static get PROFILE_CUSTOM() { return 'custom'; }
+
+    static #USER_AGENTS = {
+        [UserAgent.PROFILE_EDGE_WINDOWS]: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36 Edg/115.0.1901.188',
+        [UserAgent.PROFILE_SAFARI_MACOS]: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.5.2 Safari/605.1.1',
+        [UserAgent.PROFILE_SMARTTV_TIZEN]: 'Mozilla/5.0 (SMART-TV; LINUX; Tizen 7.0) AppleWebKit/537.36 (KHTML, like Gecko) 94.0.4606.31/7.0 TV Safari/537.36',
+    }
+
+    static getDefault() {
+        return window.navigator.orgUserAgent || window.navigator.userAgent;
+    }
+
+    static get(profile) {
+        const defaultUserAgent = UserAgent.getDefault();
+        if (profile === UserAgent.PROFILE_CUSTOM) {
+            return getPref(Preferences.USER_AGENT_CUSTOM, '');
+        }
+
+        return UserAgent.#USER_AGENTS[profile] || defaultUserAgent;
+    }
+
+    static isSafari(mobile=false) {
+        const userAgent = (UserAgent.getDefault() || '').toLowerCase();
+        let result = userAgent.includes('safari') && !userAgent.includes('chrom');
+
+        if (result && mobile) {
+            result = userAgent.includes('mobile');
+        }
+
+        return result;
+    }
+
+    static spoof() {
+        let newUserAgent;
+
+        const profile = getPref(Preferences.USER_AGENT_PROFILE);
+        if (profile === UserAgent.PROFILE_DEFAULT) {
+            // Fix Kiwi 124
+            if (window.navigator.userAgent.includes('Chrome/124.0.0.0')) {
+                newUserAgent = window.navigator.userAgent.replace('Chrome/124.0.0.0', 'Chrome/122.0.0.0')
+            } else {
+                return;
+            }
+
+        }
+
+        if (!newUserAgent) {
+            newUserAgent = UserAgent.get(profile) || defaultUserAgent;
+        }
+
+        // Clear data of navigator.userAgentData, force xCloud to detect browser based on navigator.userAgent
+        Object.defineProperty(window.navigator, 'userAgentData', {});
+
+        // Override navigator.userAgent
+        window.navigator.orgUserAgent = window.navigator.userAgent;
+        Object.defineProperty(window.navigator, 'userAgent', {
+            value: newUserAgent,
+        });
+
+        return newUserAgent;
+    }
+}
 
     blockXcloudServerList = naifeitian.getGM(blockXcloudServerList, 'blockXcloudServerListGM');
     no_need_VPN_play = naifeitian.getGM(no_need_VPN_play, 'no_need_VPN_playGM');
@@ -741,8 +808,8 @@ let fakeuad = {
 };
 
 try {
-    HookProperty(windowCtx.navigator, "userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/999.0.0.0 Safari/537.36 Edg/999.0.0.0");
-    HookProperty(windowCtx.navigator, "appVersion", "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/999.0.0.0 Safari/537.36 Edg/999.0.0.0");
+    HookProperty(windowCtx.navigator, "userAgent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/999.0.0.0");
+    HookProperty(windowCtx.navigator, "appVersion", "5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/999.0.0.0");
     HookProperty(windowCtx.navigator, "platform", "Win32");
     HookProperty(windowCtx.navigator, "appName", "Netscape");
     HookProperty(windowCtx.navigator, "appCodeName", "Mozilla");
@@ -1048,10 +1115,21 @@ function initSettingBox() {
         dom += `</label><hr style="background-color: black;width:95%" />`;
         dom += `</label><hr style="background-color: black;width:95%" />`;
         dom += `</label><hr style="background-color: black;width:95%" />`;
-    dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Mở Tool：</div>`;
+    dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Mở TOOL：</div>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOpen" value="1" ${no_need_VPN_play == 1 ? 'checked' : ''}><label for="noNeedVpnOpen" style="padding-right: 15px;">Mở</label>`;
     dom += `<input type="radio" class='noNeedVpnListener settingsBoxInputRadio' style="outline:none;" name='noNeedVpn' id="noNeedVpnOff" value="0" ${no_need_VPN_play == 0 ? 'checked' : ''}><label for="noNeedVpnOff" style="padding-right: 15px;">Tắt</label>`;
-    dom += `</label><hr style="background-color: black;width:95%" />`;
+    dom += `</label>`;
+
+    dom += `<label class=" chooseRegionsBlock" style="text-align:left;display:` + (no_need_VPN_play == 1 ? 'block' : 'none') + `"><div   style="display: inline;">IP：</div>`;
+
+    Object.keys(regionsList).forEach(region => {
+        dom += `<input type="radio" class="regionSingleListener settingsBoxInputRadio" style="outline:none;" name='selectRegion' id="${region}" value="${regionsList[region]}" ${fakeIp == regionsList[region] ? 'checked' : ''}><label for="${region}" style="padding-right: 15px;">${region}</label>`;
+    });
+    dom += `<div style="display:block">`
+    dom += `<input type="radio" class="regionSingleListener settingsBoxInputRadio" style="outline:none;" name='selectRegion' id="customfakeIp" value="customfakeIp" ${useCustomfakeIp == 1 ? 'checked' : ''}><label for="customfakeIp" style="padding-right: 15px;">IP tùy chỉnh：</label>`;
+
+    dom += `<input type='text' style="display: ` + (useCustomfakeIp == 1 ? 'inline' : 'none') + `;outline: none;width: 125px;" id="customfakeIpInput" class="customfakeIpListener" value="${customfakeIp}" placeholder="Nhập IP"/>`
+    dom += `</div>`
     dom += `</label><hr style="background-color: black;width:95%" />`;
 
     dom += `<label class="" style="display: block;text-align:left;"><div   style="display: inline;">Đồ Hoạ：</div>`;
