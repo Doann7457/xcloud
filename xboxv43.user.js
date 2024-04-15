@@ -36,7 +36,7 @@
     let IfErrUsedefaultGameLanguage = 'zh-CN';
 
     ///Tốc độ bit cao, lên tới 8M sau khi bị tắt, tốc độ bit chất lượng 720P
-    let high_bitrate = 1;
+    let high_bitrate = 0;
 
     // buộc chạm
     let autoOpenOC = 1;
@@ -48,7 +48,7 @@
     let autoFullScreen = 1;
 
     //Khóa server game trên cloud, lưu ý mục này không phải là khu vực game trên cloud (mặc định đóng)
-    let blockXcloudServer = 1;
+    let blockXcloudServer = 0;
     let blockXcloudServerList = ['AustraliaEast', 'AustraliaSouthEast', 'BrazilSouth', 'EastUS', 'EastUS2', 'JapanEast', 'KoreaCentral', 'NorthCentralUs', 'SouthCentralUS', 'UKSouth', 'WestEurope', 'WestUS', 'WestUS2'];
     let defaultXcloudServer = 'KoreaCentral';
 
