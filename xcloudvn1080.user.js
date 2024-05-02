@@ -9,8 +9,8 @@
 // @match        https://www.xbox.com/*/auth/msa?*loggedIn*
 // @run-at       document-start
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/Doann7457/xcloud/betterxcloudvietnam/better-xcloud-modvietnam.user.js
-// @downloadURL  https://github.com/Doann7457/xcloud/raw/betterxcloudvietnam/better-xcloud-modvietnam.user.js
+// @updateURL    https://raw.githubusercontent.com/redphx/better-xcloud/typescript/dist/better-xcloud.meta.js
+// @downloadURL  https://github.com/redphx/better-xcloud/releases/latest/download/better-xcloud.user.js
 // ==/UserScript==
 'use strict';
 // src/utils/global.ts
@@ -4574,10 +4574,10 @@ class Preferences {
       }
     },
     [PrefKey.STATS_SHOW_WHEN_PLAYING]: {
-      default: false
+      default: true
     },
     [PrefKey.STATS_QUICK_GLANCE]: {
-      default: true
+      default: false
     },
     [PrefKey.STATS_POSITION]: {
       default: "top-right",
@@ -4596,7 +4596,7 @@ class Preferences {
       }
     },
     [PrefKey.STATS_TRANSPARENT]: {
-      default: false
+      default: true
     },
     [PrefKey.STATS_OPACITY]: {
       type: SettingElementType.NUMBER_STEPPER,
@@ -4609,7 +4609,7 @@ class Preferences {
       }
     },
     [PrefKey.STATS_CONDITIONAL_FORMATTING]: {
-      default: false
+      default: true
     },
     [PrefKey.REMOTE_PLAY_ENABLED]: {
       label: t("enable-remote-play-feature"),
