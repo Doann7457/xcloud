@@ -9,8 +9,8 @@
 // @match        https://www.xbox.com/*/auth/msa?*loggedIn*
 // @run-at       document-start
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/redphx/better-xcloud/typescript/dist/better-xcloud.meta.js
-// @downloadURL  https://github.com/redphx/better-xcloud/releases/latest/download/better-xcloud.user.js
+// @updateURL    https://raw.githubusercontent.com/Doann7457/xcloud/betterxcloudvietnam/better-xcloud-modvietnam.user.js
+// @downloadURL  https://github.com/Doann7457/xcloud/raw/betterxcloudvietnam/better-xcloud-modvietnam.user.js
 // ==/UserScript==
 'use strict';
 // src/utils/global.ts
