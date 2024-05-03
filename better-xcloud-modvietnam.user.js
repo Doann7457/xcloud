@@ -1096,7 +1096,7 @@ var Texts = {
     "Включить поддержку локальной кооперативной игры",
     "Yerel çok oyuncu desteğini aktive et",
     "Увімкнути локальну co-op підтримку",
-    "Kích hoạt tính năng chơi chung cục bộ",
+    "Bật CHƠI 2 NGƯỜI (2 TAY CẦM)",
     "启用本地多人联机"
   ],
   "enable-local-co-op-support-note": [
