@@ -47,7 +47,7 @@
     //★★★★★★★★★★★★★★★★★★★★Reference Project License Agreement End 参考项目许可协议结束★★★★★★★★★★★★★★★★★★★★//
 
 
-    let nftxboxversion = 'v5.0';
+    let nftxboxversion = ' Đoàn Xbox';
 
     let naifeitian = {
         isType(obj) {
@@ -2132,52 +2132,13 @@ PwaPrompt: false,
             needHr: true
         },
         {
-            label: 'rtcCodecPreferences：',
+            label: 'Code Video：',
             showLable: true,
             type: 'dropdown',
             name: 'rtcCodecPreferences',
             display: "block",
             options: NFTconfig['rtcCodecPreferences']['options'],
             selectedValue: NFTconfig['rtcCodecPreferences']['default'],
-            needHr: true
-        },
-        {
-            label: 'disableCheckNetwork：',
-            type: 'radio',
-            name: 'disableCheckNetwork',
-            display: 'block',
-            options: [
-                { value: 1, text: 'Mở', id: 'disableCheckNetworkOn' },
-                { value: 0, text: 'Tắt', id: 'disableCheckNetworkOff' }
-            ],
-            checkedValue: NFTconfig['disableCheckNetwork'],
-            needHr: true
-        },
-        {
-            label: 'autoOpenOC：',
-            type: 'radio',
-            name: 'autoOpenOC',
-            display: 'block',
-            options: [
-                { value: 1, text: 'Mở', id: 'autoOpenOCOn' },
-                { value: 0, text: 'Tắt', id: 'autoOpenOCOff' }
-            ],
-            checkedValue: NFTconfig['autoOpenOC'],
-            needHr: true,
-            moreDom: `<div id="autoShowTouchDom" style="padding-right: 0px;display: ${NFTconfig['autoOpenOC'] == 1 ? 'inline' : 'none'}">
-        <input type="checkbox" class="autoShowTouchListener settingsBoxInputRadio" style="outline:none;cursor: pointer;" name='autoShowTouch'
-        id="autoShowTouch" ${NFTconfig['autoShowTouch'] == true ? 'checked' : ''}><label for="autoShowTouch" style="cursor: pointer;">AUTO bật</label></div>`
-        },
-        {
-            label: 'disableTouchControls：',
-            type: 'radio',
-            name: 'disableTouchControls',
-            display: 'block',
-            options: [
-                { value: 1, text: 'Mở', id: 'disableTouchControlsOn' },
-                { value: 0, text: 'Tắt', id: 'disableTouchControlsOff' },
-            ],
-            checkedValue: NFTconfig['disableTouchControls'],
             needHr: true
         },
         {
@@ -2192,19 +2153,6 @@ PwaPrompt: false,
             checkedValue: NFTconfig['autoFullScreen'],
             needHr: true
         },
-        {
-            label: 'IPv6server：',
-            type: 'radio',
-            name: 'IPv6server',
-            display: 'block',
-            options: [
-                { value: 1, text: 'Mở', id: 'IPv6On' },
-                { value: 0, text: 'Tắt', id: 'IPv6Off' }
-            ],
-            checkedValue: NFTconfig['IPv6'],
-            needHr: true
-        }
-        ,
         {
             label: 'Chọn máy chủ：',
             type: 'radio',
@@ -2228,7 +2176,7 @@ PwaPrompt: false,
 
         },
         {
-            label: 'antiKick：',
+            label: 'Treo Máy：',
             type: 'radio',
             name: 'antiKick',
             display: 'block',
@@ -2241,19 +2189,7 @@ PwaPrompt: false,
 
         },
         {
-            label: 'noPopSetting：',
-            type: 'radio',
-            name: 'noPopSetting',
-            display: 'block',
-            options: [
-                { value: 0, text: 'Tắt', id: 'noPopSettingOff' },
-                { value: 1, text: 'Mở', id: 'noPopSettingOn' }
-            ],
-            checkedValue: NFTconfig['noPopSetting'],
-            needHr: true
-        },
-        {
-            label: 'enableRemotePlay：',
+            label: 'RemotePlay：',
             type: 'radio',
             name: 'enableRemotePlay',
             display: 'block',
@@ -2322,17 +2258,26 @@ PwaPrompt: false,
         let settingsHTML = `
         <div style="padding: 10px;color: black;display:none;" class="settingsBackgroud" id="settingsBackgroud">
             <div class="settingsBox"><span class="blink-text" onclick="window.location.href='https://www.tiktok.com/@xboxcloudvn';">TIKTOK</span>
+                    <label>Bảng Tool：</label>
+                    <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">Đoàn Game</a>
+                    </label><hr style="background-color: black;width:100%" </label>
+                    <label>Liên Hệ：</label>
+                    <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">ZALO:0389940355</a>
+                    </label><hr style="background-color: black;width:100%" </label>
+                    </label><hr style="background-color: black;width:100%" </label>
     `;
         settingsConfig.forEach(setting => {
             settingsHTML += generateSettingElement(setting);
         });
 
         settingsHTML += `
-                <button class="closeSetting1 closeSetting2" style="outline: none;">关闭</button>
-                <div style="text-align: right;margin-top: 8px;font-size: 16px;">
-                    <label>捐赠：</label>
-                    <a style="margin-right:15px;outline: none;color: #107c10;text-decoration: underline;" href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMVNFQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--14c278e3f72d104cff50bf130d4039229fc25a6b/wx.png?locale=zh-CN">微信</a>
-                    <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://greasyfork.org/rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBMU9FQVE9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--5fc08aaa8407cc6099654d65455b7966bf2c60ee/alipay.png?locale=zh-CN">支付宝</a>
+                <button class="closeSetting1 closeSetting2" style="outline: none;">Đóng</button>
+                <div style="text-align: center;margin-top: 8px;font-size: 16px;">
+                    <label>Thông Tin：</label>
+                    <a style="margin-right:15px;outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">Việt Hoá By Đoàn Nguyễn</a>
+                <div style="text-align: center;margin-top: 8px;font-size: 16px;">
+                    <label>Liên Hệ：</label>
+                    <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">XboxCloud Việt Nam</a>
                 </div>
             </div>
         </div>
@@ -2357,31 +2302,31 @@ PwaPrompt: false,
         $(document).on('click', '.enableRemotePlayListener', function () {
             needrefresh = 1;
             naifeitian.setValue('enableRemotePlayGM', $(this).val());
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //设置悬浮窗
         $(document).on('click', '.noPopSettingListener', function () {
             naifeitian.setValue('noPopSettingGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //挂机防踢
         $(document).on('click', '.antiKickListener', function () {
             needrefresh = 1;
             naifeitian.setValue('antiKickGM', $(this).val());
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //ipv6
         $(document).on('click', '.IPv6serverListener', function () {
             naifeitian.setValue('IPv6GM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //选择服务器change
         $(document).on('change', '.defaultXcloudServerListener', function () {
             naifeitian.setValue('defaultXcloudServerGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //物理服务器
         $(document).on('click', '.blockXcloudServerListener', function () {
@@ -2392,19 +2337,19 @@ PwaPrompt: false,
             }
             naifeitian.setValue('blockXcloudServerGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //自动全屏
         $(document).on('click', '.autoFullScreenListener', function () {
             naifeitian.setValue('autoFullScreenGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //屏蔽触控
         $(document).on('click', '.disableTouchControlsListener', function () {
             if ($(this).val() == 1) {
-                if (!confirm("确定要屏蔽触控吗?")) {
+                if (!confirm("Bạn có chắc chắn muốn chặn liên lạc không??")) {
                     $('#disableTouchControlsOff').click();
                     return;
                 }
@@ -2413,7 +2358,7 @@ PwaPrompt: false,
 
             needrefresh = 1;
             naifeitian.setValue('disableTouchControlsGM', $(this).val());
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //自动弹出
@@ -2426,7 +2371,7 @@ PwaPrompt: false,
             }
             naifeitian.setValue('autoShowTouchGM', !newVal);
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //强制触控
         $(document).on('click', '.autoOpenOCListener', function () {
@@ -2440,27 +2385,27 @@ PwaPrompt: false,
 
             naifeitian.setValue('autoOpenOCGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //禁止检测网络
         $(document).on('click', '.disableCheckNetworkListener', function () {
             naifeitian.setValue('disableCheckNetworkGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //浏览器编解码偏好
         $(document).on('change', '.rtcCodecPreferencesListener', function () {
             NFTconfig['rtcCodecPreferences']['default'] = $(this).val();
             naifeitian.setValue('rtcCodecPreferencesGM', NFTconfig['rtcCodecPreferences']);
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //分辨率
         $(document).on('click', '.highBitrateListener', function () {
             naifeitian.setValue('high_bitrateGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
 
@@ -2475,7 +2420,7 @@ PwaPrompt: false,
                 return;
             }
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //选服
         $(document).on('click', '.selectRegionListener', function () {
@@ -2489,7 +2434,7 @@ PwaPrompt: false,
                 $('#customfakeIpInput').css('display', 'none');
             }
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //免代理直连
@@ -2503,14 +2448,14 @@ PwaPrompt: false,
             }
             naifeitian.setValue('no_need_VPN_playGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //智能简繁错误
         $(document).on('click', '.IfErrUsedefaultGameLanguageListener', function () {
             naifeitian.setValue('IfErrUsedefaultGameLanguageGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
         //语言
         $(document).on('click', '.selectLanguageListener', function () {
@@ -2521,7 +2466,7 @@ PwaPrompt: false,
             }
             naifeitian.setValue('xcloud_game_languageGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
 
         //选择语言
@@ -2538,7 +2483,7 @@ PwaPrompt: false,
             }
             naifeitian.setValue('chooseLanguageGM', $(this).val());
             needrefresh = 1;
-            $('.closeSetting1').text('确定');
+            $('.closeSetting1').text('Lưu');
         });
     }
     //手势显隐触控
@@ -2616,7 +2561,7 @@ PwaPrompt: false,
         setTimeout(function () {
 
             if (NFTconfig['noPopSetting'] == 0) {
-                $('body').append(`<div id="popSetting" style="display:block">⚙️ Hiện</div>`);
+                $('body').append(`<div id="popSetting" style="display:block">⚙️Hiện </div>`);
                 $(document).on('click', '#popSetting', function () {
                     naifeitian.showSetting();
                 });
@@ -3232,10 +3177,10 @@ PwaPrompt: false,
         if (mslogodom.length > 0) {
             clearInterval(mslogoInterval);
             mslogodom = mslogodom.next();
-            if (mslogodom.text() == ("⚙️ Hiện" + nftxboxversion)) { return; }
+            if (mslogodom.text() == ("⚙️" + nftxboxversion)) { return; }
             mslogodom.removeAttr('href');
             mslogodom.css("color", 'white');
-            mslogodom.text("⚙️ Hiện" + nftxboxversion);
+            mslogodom.text("⚙️ " + nftxboxversion);
             mslogodom.click(() => {
                 naifeitian.showSetting();
             });
@@ -3267,7 +3212,7 @@ PwaPrompt: false,
             this.$dialog = CE('div', { 'class': `bx-dialog ${className} bx-gone` },
                 CE('b', {}, title),
                 CE('div', { 'class': 'bx-dialog-content' }, $content),
-                $close = CE('button', {}, "关闭"));
+                $close = CE('button', {}, "Đóng"));
 
             $close.addEventListener('click', e => {
                 this.hide(e);
@@ -3363,7 +3308,7 @@ PwaPrompt: false,
             }
             const CE = createElement;
             RemotePlay.#$content = CE('div', {}, "获取控制台列表");
-            RemotePlay.#dialog = new Dialog(("串流"), '', RemotePlay.#$content);
+            RemotePlay.#dialog = new Dialog(("RemotePlay"), '', RemotePlay.#$content);
 
             RemotePlay.#getXhomeToken(() => {
                 RemotePlay.#getConsolesList(() => {
@@ -3379,7 +3324,7 @@ PwaPrompt: false,
             const $fragment = document.createDocumentFragment();
 
             if (!RemotePlay.#CONSOLES || RemotePlay.#CONSOLES.length === 0) {
-                $fragment.appendChild(CE('span', {}, "未找到主机"));
+                $fragment.appendChild(CE('span', {}, "Không tìm thấy máy chủ"));
             } else {
                 const $settingNote = CE('p', {});
 
@@ -3607,7 +3552,7 @@ PwaPrompt: false,
             return;
         }
         if (mslogodom.length > 0) { mslogodom = $(mslogodom.get(0)); }
-        let linkElement = $("a:contains('⚙️ Hiện" + nftxboxversion + "')");
+        let linkElement = $("a:contains('⚙️ " + nftxboxversion + "')");
         for (let i = 0; i < linkElement.length; i++) {
             let ele = linkElement.get(i);
             if ($(ele).attr('class').indexOf('button') > -1) {
@@ -3616,7 +3561,7 @@ PwaPrompt: false,
         }
         mslogodom.removeAttr('href');
         mslogodom.css("color", 'white');
-        mslogodom.text("⚙️ Hiện" + nftxboxversion);
+        mslogodom.text("⚙️ " + nftxboxversion);
         mslogodom.click(() => {
             naifeitian.showSetting();
         });
@@ -3627,7 +3572,7 @@ PwaPrompt: false,
             //添加串流按钮
             var targetElement = $("[title*='Account Settings']");
 
-            var newButton = $(`<button class="bx-remote-play-button" title="远程串流"><svg fill="none" stroke="#fff" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 32 32"><g transform="matrix(.492308 0 0 .581818 -14.7692 -11.6364)"><clipPath id="A"><path d="M30 20h65v55H30z"></path></clipPath><g clip-path="url(#A)"><g transform="matrix(.395211 0 0 .334409 11.913 7.01124)"><g transform="matrix(.555556 0 0 .555556 57.8889 -20.2417)" fill="none" stroke="#fff" stroke-width="13.88"><path d="M200 140.564c-42.045-33.285-101.955-33.285-144 0M168 165c-23.783-17.3-56.217-17.3-80 0"></path></g><g transform="matrix(-.555556 0 0 -.555556 200.111 262.393)"><g transform="matrix(1 0 0 1 0 11.5642)"><path d="M200 129c-17.342-13.728-37.723-21.795-58.636-24.198C111.574 101.378 80.703 109.444 56 129" fill="none" stroke="#fff" stroke-width="13.88"></path></g><path d="M168 165c-23.783-17.3-56.217-17.3-80 0" fill="none" stroke="#fff" stroke-width="13.88"></path></g><g transform="matrix(.75 0 0 .75 32 32)"><path d="M24 72h208v93.881H24z" fill="none" stroke="#fff" stroke-linejoin="miter" stroke-width="9.485"></path><circle cx="188" cy="128" r="12" stroke-width="10" transform="matrix(.708333 0 0 .708333 71.8333 12.8333)"></circle><path d="M24.358 103.5h110" fill="none" stroke="#fff" stroke-linecap="butt" stroke-width="10.282"></path></g></g></g></g></svg></button>`);
+            var newButton = $(`<button class="bx-remote-play-button" title="remote play"><svg fill="none" stroke="#fff" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" viewBox="0 0 32 32"><g transform="matrix(.492308 0 0 .581818 -14.7692 -11.6364)"><clipPath id="A"><path d="M30 20h65v55H30z"></path></clipPath><g clip-path="url(#A)"><g transform="matrix(.395211 0 0 .334409 11.913 7.01124)"><g transform="matrix(.555556 0 0 .555556 57.8889 -20.2417)" fill="none" stroke="#fff" stroke-width="13.88"><path d="M200 140.564c-42.045-33.285-101.955-33.285-144 0M168 165c-23.783-17.3-56.217-17.3-80 0"></path></g><g transform="matrix(-.555556 0 0 -.555556 200.111 262.393)"><g transform="matrix(1 0 0 1 0 11.5642)"><path d="M200 129c-17.342-13.728-37.723-21.795-58.636-24.198C111.574 101.378 80.703 109.444 56 129" fill="none" stroke="#fff" stroke-width="13.88"></path></g><path d="M168 165c-23.783-17.3-56.217-17.3-80 0" fill="none" stroke="#fff" stroke-width="13.88"></path></g><g transform="matrix(.75 0 0 .75 32 32)"><path d="M24 72h208v93.881H24z" fill="none" stroke="#fff" stroke-linejoin="miter" stroke-width="9.485"></path><circle cx="188" cy="128" r="12" stroke-width="10" transform="matrix(.708333 0 0 .708333 71.8333 12.8333)"></circle><path d="M24.358 103.5h110" fill="none" stroke="#fff" stroke-linecap="butt" stroke-width="10.282"></path></g></g></g></g></svg></button>`);
             newButton.on("click", function () {
                 RemotePlay.showDialog();
             });
