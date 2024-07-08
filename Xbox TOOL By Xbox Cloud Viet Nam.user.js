@@ -392,7 +392,7 @@ PwaPrompt: false,
                 'Japan': '210.131.113.123'
             }
         },
-        chooseLanguage: 1,
+        chooseLanguage: 0,
         IfErrUsedefaultGameLanguage: 'zh-CN',
         high_bitrate: 1,
         disableCheckNetwork: 1,
