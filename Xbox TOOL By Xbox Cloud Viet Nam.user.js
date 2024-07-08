@@ -2258,10 +2258,10 @@ PwaPrompt: false,
         let settingsHTML = `
         <div style="padding: 10px;color: black;display:none;" class="settingsBackgroud" id="settingsBackgroud">
             <div class="settingsBox"><span class="blink-text" onclick="window.location.href='https://www.tiktok.com/@xboxcloudvn';">TIKTOK</span>
-                    <label>Bảng Tool：</label>
+                    <label>Bảng Tool 5.0：</label>
                     <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">Đoàn Game</a>
                     </label><hr style="background-color: black;width:100%" </label>
-                    <label>Liên Hệ：</label>
+                    <label>Liên Hệ Đoàn：</label>
                     <a style="outline: none;color: #107c10;text-decoration: underline;" href="https://www.youtube.com/channel/UCxRnbvxANiOzYMs8qBpcJwg">ZALO:0389940355</a>
                     </label><hr style="background-color: black;width:100%" </label>
                     </label><hr style="background-color: black;width:100%" </label>
