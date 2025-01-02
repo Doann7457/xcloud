@@ -393,7 +393,7 @@ PwaPrompt: false,
             }
         },
         chooseLanguage: 0,
-        IfErrUsedefaultGameLanguage: 'zh-CN',
+        IfErrUsedefaultGameLanguage: 'Auto',
         high_bitrate: 1,
         disableCheckNetwork: 1,
         IPv6: 0,
@@ -504,7 +504,7 @@ PwaPrompt: false,
         antiKick: 0,
         useCustomfakeIp: 0,
         customfakeIp: '',
-        xcloud_game_language: default_language_list['简体'],
+        xcloud_game_language: default_language_list['Auto'],
         REMOTE_PLAY_RESOLUTION: {
             'default': '1080p',
             'options': {
