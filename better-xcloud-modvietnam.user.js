@@ -4373,7 +4373,7 @@ class Preferences {
     },
     [PrefKey.LOCAL_CO_OP_ENABLED]: {
       label: t("enable-local-co-op-support"),
-      default: false,
+      default: true,
       note: CE("a", {
         href: "https://github.com/redphx/better-xcloud/discussions/275",
         target: "_blank"
