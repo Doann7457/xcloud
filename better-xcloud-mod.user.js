@@ -1679,7 +1679,7 @@ class GlobalSettingsStorage extends BaseSettingsStore {
    requiredVariants: "full",
    label: t("enable-local-co-op-support"),
    labelIcon: BxIcon.LOCAL_CO_OP,
-   default: !1,
+   default: !0,
    note: () => CE("div", !1, CE("a", {
     href: "https://github.com/redphx/better-xcloud/discussions/275",
     target: "_blank"
